@@ -923,7 +923,7 @@ overall_knn<-round(mean(Scores_knn$`Balanced Accuracy`)*100,1)
 kable(Scores_knn,caption="Aggregrated summary statistics for the output of KNN using pincipal component analysis versus feature selection based on correlations (i.e., the same as the random forests case, earlier).",booktabs=TRUE,format="latex",align=c("r",rep("c",5))) %>% kable_styling(latex_options = "hold_position")
 ```
 
-Feature extraction based on correlations to SG (Section \@ref(featselect)) yields better results than extractions based on PCA (Table \@ref(tab:ScoresKNN)). The sensitivity of the top decile is `r round(Scores_knn[[1,"Sensitivity w/o PCA"]],3)` for the model based in feature correlations and `r round(Scores_knn$Sensitivity[1],3)` for the PCA-based model. Despite the improvement when using PCA, the KNN model gives unreliable results that are risky to bet on. The overall balanced accuracy for identifying the three classes of players is `r overall_knn`% while the accuracy of identifying just the top and bottom classes is `r top_bottom_knn`%. 
+Feature extraction based on PCA (Section \@ref(featselect)) yields better results than extractions based on correlations to SG (Table \@ref(tab:ScoresKNN)). The sensitivity of the top decile is `r round(Scores_knn[[1,"Sensitivity w/o PCA"]],3)` for the model based in feature correlations and `r round(Scores_knn$Sensitivity[1],3)` for the PCA-based model. Despite the improvement when using PCA, the KNN model gives unreliable results that are risky to bet on. The overall balanced accuracy for identifying the three classes of players is `r overall_knn`% while the accuracy of identifying just the top and bottom classes is `r top_bottom_knn`%. 
 
 # Discussion {#discuss}
 
